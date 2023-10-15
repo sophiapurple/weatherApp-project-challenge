@@ -37,6 +37,17 @@ function displayWeatherCondition(response) {
   let descriptionElement = document.querySelector("#description");
   let weatherDescription = response.data.condition.description;
   descriptionElement.innerHTML = weatherDescription;
+
+  let iconHtml = document.querySelector("#weather-icon");
+  iconHtml.setAttribute("src", response.data.condition.icon_url);
+
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = celsius;
+  temperatureElement.innerHTML = temperature;
+
+  temperatureElement = document.querySelector("#temperature");
+  celsius = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = celsius;
 }
 function searchCity(city) {
   let apiKey = "93cf0a589b1befff9b43f05fbt79bo02";
@@ -44,11 +55,34 @@ function searchCity(city) {
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
+function searchFahreheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahreheit = Math.round((celsius * 9) / 32);
+  temperatureElement.innerHTML = fahreheit;
+}
+
+function searchCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = celsius;
+}
+
+let celsius = null;
+
 function handleSubmit(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#input-text");
   searchCity(inputCity.value);
 }
+
+let fahElement = document.querySelector("#fahreheit-link");
+fahElement.addEventListener("click", searchFahreheit);
+
+celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", searchCelsius);
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 searchCity("lagos");
