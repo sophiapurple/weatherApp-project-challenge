@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forcast</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="src/stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <form id="search-form" class="searchForm">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autocomplete="off"
+                autofocus="on"
+                id="input-text"
+              />
+            
+              <input
+                type="submit"
+                value="Search"
+              />
+            
+        </form>
+        <h1>city</h1>
+<div class="overview">
+        <ul>
+          <li id="time">Lasted updated:</li>
+          <li id="description">Description</li>
+        </ul>
+</div>
+
+        <div class="current-weather-condition">
+          <div class="row">
+            <div class="col-6">
+              <img src="#" alt="jj"  id="weather-icon" class="weatherIcon"/>
+              <span class="temperature" id="temperature">13</span>
+              <span class="unit">
+                <a href="#" class="active" id="celsius-link">°C|</a>
+                <a href="#" id="fahreheit-link">°F</a>
+              </span>
+            </div>
+            <div class="col-6">
+              <div class="humidity" id="humidity">Humidity: %</div>
+              <div class="wind" id="wind">Wind: km/h</div>
+            </div>
+          </div>
+        </div>
+        <div class="weather-forcast">
+          <div class="row">
+            <div class="col-2">
+              <div class="weather-forcast-date">day</div>
+              <img src="#" alt="kk" class="weather-forcast-image" />
+
+              <div class="weather-forcast-temperature">
+                <span class="weather-forcast-temperature max">max</span>
+                <span class="weather-forcast-temperature min">min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
