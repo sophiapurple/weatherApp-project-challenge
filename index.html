@@ -31,7 +31,12 @@
               />
             
         </form>
-        <h1>city</h1>
+        <div id="location">Location</div>
+        <form id="form-nav" class="navigator">
+          <input type ="submit" value="Click">
+
+      </form>
+        <h1 id="city">city</h1>
 <div class="overview">
         <ul>
           <li id="time">Lasted updated:</li>
@@ -55,20 +60,13 @@
             </div>
           </div>
         </div>
-        <div class="weather-forcast">
-          <div class="row">
-            <div class="col-2">
-              <div class="weather-forcast-date">day</div>
-              <img src="#" alt="kk" class="weather-forcast-image" />
+        <div class="weather-forcast" id="forcast-link">
 
-              <div class="weather-forcast-temperature">
-                <span class="weather-forcast-temperature max">max</span>
-                <span class="weather-forcast-temperature min">min</span>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="forcast" id="weatherForcast">
         </div>
       </div>
+      
     </div>
   </div>
     <script src="src/app.js"></script>
